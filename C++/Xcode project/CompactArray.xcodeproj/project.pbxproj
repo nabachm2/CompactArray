@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E1996ABF192ADC3500CDFEEE /* CompactArray.hpp in Sources */ = {isa = PBXBuildFile; fileRef = E1996ABD192ADC3500CDFEEE /* CompactArray.hpp */; };
+		E1996AC0192ADC3500CDFEEE /* CompactArray.h in Headers */ = {isa = PBXBuildFile; fileRef = E1996ABE192ADC3500CDFEEE /* CompactArray.h */; };
+		E1996AC8192ADCD200CDFEEE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1996AC7192ADCD200CDFEEE /* XCTest.framework */; };
+		E1996ACE192ADCD200CDFEEE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1996ACC192ADCD200CDFEEE /* InfoPlist.strings */; };
+		E1996AD0192ADCD200CDFEEE /* CompactArray_Tests.mm in Sources */ = {isa = PBXBuildFile; fileRef = E1996ACF192ADCD200CDFEEE /* CompactArray_Tests.mm */; };
+		E1996ADE192AEC6E00CDFEEE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1996AC7192ADCD200CDFEEE /* XCTest.framework */; };
+		E1996AE4192AEC6E00CDFEEE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1996AE2192AEC6E00CDFEEE /* InfoPlist.strings */; };
+		E1996AE6192AEC6E00CDFEEE /* CompactArraySigned_Tests.mm in Sources */ = {isa = PBXBuildFile; fileRef = E1996AE5192AEC6E00CDFEEE /* CompactArraySigned_Tests.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E1996AD2192ADCD200CDFEEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1996AAE192ADC1300CDFEEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1996AB5192ADC1300CDFEEE;
+			remoteInfo = CompactArray;
+		};
+		E1996AE8192AEC6E00CDFEEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1996AAE192ADC1300CDFEEE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1996AB5192ADC1300CDFEEE;
+			remoteInfo = CompactArray;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E1996AB6192ADC1300CDFEEE /* libCompactArray.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libCompactArray.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1996ABD192ADC3500CDFEEE /* CompactArray.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CompactArray.hpp; sourceTree = "<group>"; };
+		E1996ABE192ADC3500CDFEEE /* CompactArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompactArray.h; sourceTree = "<group>"; };
+		E1996AC5192ADCD200CDFEEE /* CompactArray Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CompactArray Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1996AC7192ADCD200CDFEEE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E1996ACB192ADCD200CDFEEE /* CompactArray Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CompactArray Tests-Info.plist"; sourceTree = "<group>"; };
+		E1996ACD192ADCD200CDFEEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E1996ACF192ADCD200CDFEEE /* CompactArray_Tests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CompactArray_Tests.mm; sourceTree = "<group>"; };
+		E1996AD1192ADCD200CDFEEE /* CompactArray Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CompactArray Tests-Prefix.pch"; sourceTree = "<group>"; };
+		E1996ADD192AEC6E00CDFEEE /* CompactArraySigned Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CompactArraySigned Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1996AE1192AEC6E00CDFEEE /* CompactArraySigned Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CompactArraySigned Tests-Info.plist"; sourceTree = "<group>"; };
+		E1996AE3192AEC6E00CDFEEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E1996AE5192AEC6E00CDFEEE /* CompactArraySigned_Tests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CompactArraySigned_Tests.mm; sourceTree = "<group>"; };
+		E1996AE7192AEC6E00CDFEEE /* CompactArraySigned Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CompactArraySigned Tests-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1996AB3192ADC1300CDFEEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1996AC2192ADCD200CDFEEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1996AC8192ADCD200CDFEEE /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1996ADA192AEC6E00CDFEEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1996ADE192AEC6E00CDFEEE /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E1996AAD192ADC1300CDFEEE = {
+			isa = PBXGroup;
+			children = (
+				E1996ABD192ADC3500CDFEEE /* CompactArray.hpp */,
+				E1996ABE192ADC3500CDFEEE /* CompactArray.h */,
+				E1996AC9192ADCD200CDFEEE /* CompactArray Tests */,
+				E1996ADF192AEC6E00CDFEEE /* CompactArraySigned Tests */,
+				E1996AC6192ADCD200CDFEEE /* Frameworks */,
+				E1996AB7192ADC1300CDFEEE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E1996AB7192ADC1300CDFEEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1996AB6192ADC1300CDFEEE /* libCompactArray.dylib */,
+				E1996AC5192ADCD200CDFEEE /* CompactArray Tests.xctest */,
+				E1996ADD192AEC6E00CDFEEE /* CompactArraySigned Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1996AC6192ADCD200CDFEEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1996AC7192ADCD200CDFEEE /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1996AC9192ADCD200CDFEEE /* CompactArray Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E1996ACF192ADCD200CDFEEE /* CompactArray_Tests.mm */,
+				E1996ACA192ADCD200CDFEEE /* Supporting Files */,
+			);
+			path = "CompactArray Tests";
+			sourceTree = "<group>";
+		};
+		E1996ACA192ADCD200CDFEEE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1996ACB192ADCD200CDFEEE /* CompactArray Tests-Info.plist */,
+				E1996ACC192ADCD200CDFEEE /* InfoPlist.strings */,
+				E1996AD1192ADCD200CDFEEE /* CompactArray Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1996ADF192AEC6E00CDFEEE /* CompactArraySigned Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E1996AE5192AEC6E00CDFEEE /* CompactArraySigned_Tests.mm */,
+				E1996AE0192AEC6E00CDFEEE /* Supporting Files */,
+			);
+			path = "CompactArraySigned Tests";
+			sourceTree = "<group>";
+		};
+		E1996AE0192AEC6E00CDFEEE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1996AE1192AEC6E00CDFEEE /* CompactArraySigned Tests-Info.plist */,
+				E1996AE2192AEC6E00CDFEEE /* InfoPlist.strings */,
+				E1996AE7192AEC6E00CDFEEE /* CompactArraySigned Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E1996AB4192ADC1300CDFEEE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1996AC0192ADC3500CDFEEE /* CompactArray.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E1996AB5192ADC1300CDFEEE /* CompactArray */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1996ABA192ADC1300CDFEEE /* Build configuration list for PBXNativeTarget "CompactArray" */;
+			buildPhases = (
+				E1996AB2192ADC1300CDFEEE /* Sources */,
+				E1996AB3192ADC1300CDFEEE /* Frameworks */,
+				E1996AB4192ADC1300CDFEEE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CompactArray;
+			productName = CompactArray;
+			productReference = E1996AB6192ADC1300CDFEEE /* libCompactArray.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		E1996AC4192ADCD200CDFEEE /* CompactArray Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1996AD4192ADCD200CDFEEE /* Build configuration list for PBXNativeTarget "CompactArray Tests" */;
+			buildPhases = (
+				E1996AC1192ADCD200CDFEEE /* Sources */,
+				E1996AC2192ADCD200CDFEEE /* Frameworks */,
+				E1996AC3192ADCD200CDFEEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1996AD3192ADCD200CDFEEE /* PBXTargetDependency */,
+			);
+			name = "CompactArray Tests";
+			productName = "CompactArray Tests";
+			productReference = E1996AC5192ADCD200CDFEEE /* CompactArray Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E1996ADC192AEC6E00CDFEEE /* CompactArraySigned Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1996AEA192AEC6E00CDFEEE /* Build configuration list for PBXNativeTarget "CompactArraySigned Tests" */;
+			buildPhases = (
+				E1996AD9192AEC6E00CDFEEE /* Sources */,
+				E1996ADA192AEC6E00CDFEEE /* Frameworks */,
+				E1996ADB192AEC6E00CDFEEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1996AE9192AEC6E00CDFEEE /* PBXTargetDependency */,
+			);
+			name = "CompactArraySigned Tests";
+			productName = "CompactArraySigned Tests";
+			productReference = E1996ADD192AEC6E00CDFEEE /* CompactArraySigned Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1996AAE192ADC1300CDFEEE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = banana.inc;
+				TargetAttributes = {
+					E1996AC4192ADCD200CDFEEE = {
+						TestTargetID = E1996AB5192ADC1300CDFEEE;
+					};
+					E1996ADC192AEC6E00CDFEEE = {
+						TestTargetID = E1996AB5192ADC1300CDFEEE;
+					};
+				};
+			};
+			buildConfigurationList = E1996AB1192ADC1300CDFEEE /* Build configuration list for PBXProject "CompactArray" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E1996AAD192ADC1300CDFEEE;
+			productRefGroup = E1996AB7192ADC1300CDFEEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1996AB5192ADC1300CDFEEE /* CompactArray */,
+				E1996AC4192ADCD200CDFEEE /* CompactArray Tests */,
+				E1996ADC192AEC6E00CDFEEE /* CompactArraySigned Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1996AC3192ADCD200CDFEEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1996ACE192ADCD200CDFEEE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1996ADB192AEC6E00CDFEEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1996AE4192AEC6E00CDFEEE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1996AB2192ADC1300CDFEEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1996ABF192ADC3500CDFEEE /* CompactArray.hpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1996AC1192ADCD200CDFEEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1996AD0192ADCD200CDFEEE /* CompactArray_Tests.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1996AD9192AEC6E00CDFEEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1996AE6192AEC6E00CDFEEE /* CompactArraySigned_Tests.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1996AD3192ADCD200CDFEEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1996AB5192ADC1300CDFEEE /* CompactArray */;
+			targetProxy = E1996AD2192ADCD200CDFEEE /* PBXContainerItemProxy */;
+		};
+		E1996AE9192AEC6E00CDFEEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1996AB5192ADC1300CDFEEE /* CompactArray */;
+			targetProxy = E1996AE8192AEC6E00CDFEEE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E1996ACC192ADCD200CDFEEE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1996ACD192ADCD200CDFEEE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E1996AE2192AEC6E00CDFEEE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1996AE3192AEC6E00CDFEEE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1996AB8192ADC1300CDFEEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E1996AB9192ADC1300CDFEEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E1996ABB192ADC1300CDFEEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E1996ABC192ADC1300CDFEEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E1996AD5192ADCD200CDFEEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CompactArray Tests/CompactArray Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CompactArray Tests/CompactArray Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E1996AD6192ADCD200CDFEEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CompactArray Tests/CompactArray Tests-Prefix.pch";
+				INFOPLIST_FILE = "CompactArray Tests/CompactArray Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		E1996AEB192AEC6E00CDFEEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CompactArraySigned Tests/CompactArraySigned Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CompactArraySigned Tests/CompactArraySigned Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E1996AEC192AEC6E00CDFEEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CompactArraySigned Tests/CompactArraySigned Tests-Prefix.pch";
+				INFOPLIST_FILE = "CompactArraySigned Tests/CompactArraySigned Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1996AB1192ADC1300CDFEEE /* Build configuration list for PBXProject "CompactArray" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1996AB8192ADC1300CDFEEE /* Debug */,
+				E1996AB9192ADC1300CDFEEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1996ABA192ADC1300CDFEEE /* Build configuration list for PBXNativeTarget "CompactArray" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1996ABB192ADC1300CDFEEE /* Debug */,
+				E1996ABC192ADC1300CDFEEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E1996AD4192ADCD200CDFEEE /* Build configuration list for PBXNativeTarget "CompactArray Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1996AD5192ADCD200CDFEEE /* Debug */,
+				E1996AD6192ADCD200CDFEEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E1996AEA192AEC6E00CDFEEE /* Build configuration list for PBXNativeTarget "CompactArraySigned Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1996AEB192AEC6E00CDFEEE /* Debug */,
+				E1996AEC192AEC6E00CDFEEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1996AAE192ADC1300CDFEEE /* Project object */;
+}
