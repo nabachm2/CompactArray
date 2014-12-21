@@ -1,6 +1,6 @@
 //
-//  CompactArray_Tests.m
-//  CompactArray Tests
+//  SCompactArray_Tests.m
+//  SCompactArray Tests
 //
 //  Created by Nicholas Bachmann on 5/19/14.
 //  Copyright (c) 2014 banana.inc. All rights reserved.
@@ -8,18 +8,18 @@
 
 #import <XCTest/XCTest.h>
 
-#include "CompactArray.h"
+#include "compact_array_s.h"
 #include <time.h>
 #include <sys/time.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
 
-@interface CompactArray_Tests : XCTestCase
+@interface SCompactArraySigned_Tests : XCTestCase
 
 @end
 
-@implementation CompactArray_Tests
+@implementation SCompactArraySigned_Tests
 
 /**
  * Tests basic get and set operations, setting increasing
@@ -28,14 +28,14 @@
 
 -(void)testBasicSetGet {
     const int bitNum = 7;
-    int maxValue = (int) (pow(2, bitNum) - 1);
+    int maxValue = (int) (pow(2, bitNum - 1) - 1);
     int size = 100000;
-    CompactArray<bitNum, false>* array = new CompactArray<bitNum, false>(size);
+    SCompactArray<bitNum, true>* array = new SCompactArray<bitNum, true>(size);
     for (int i = 0;i < size;i ++)
-        array->Set(i, i % maxValue);
+        array->Set(i, (i % (maxValue * 2)) - maxValue);
     
     for (int i = 0;i < size;i ++)
-        XCTAssertEqual(i % maxValue, (int) array->Get(i));
+        XCTAssertEqual((i % (maxValue * 2)) - maxValue, (int) array->Get(i));
     
     delete array;
 }
@@ -50,17 +50,17 @@
     int seedVal = rand();
     
     const int bitNum = 7;
-    long maxValue = (long) (pow(2, bitNum) - 1);
+    long maxValue = (long) (pow(2, bitNum - 1) - 1);
     int size = 100000;
-    CompactArray<bitNum, false>* array = new CompactArray<bitNum, false>(size);
+    SCompactArray<bitNum, true>* array = new SCompactArray<bitNum, true>(size);
     
     srand(seedVal);
     for (int i = 0;i < size;i ++)
-        array->Set(i, rand() % maxValue);
+        array->Set(i, (rand() % (maxValue * 2)) - maxValue);
     
     srand(seedVal);
     for (int i = 0;i < size;i ++)
-        XCTAssertTrue(rand() % maxValue == array->Get(i));
+        XCTAssertTrue((rand() % (maxValue * 2)) - maxValue == array->Get(i));
     
     delete array;
 }
@@ -76,9 +76,9 @@
     int seedVal = rand();
     
     const int bitNum = 7;
-    int maxValue = (int) (pow(2, bitNum) - 1);
+    int maxValue = (int) (pow(2, bitNum - 1) - 1);
     int size = 100000;
-    CompactArray<bitNum, false>* array = new CompactArray<bitNum, false>(size);
+    SCompactArray<bitNum, true>* array = new SCompactArray<bitNum, true>(size);
     long arrayHolder[size];
     for (int i = 0;i < size;i ++)
         arrayHolder[i] = 0;
@@ -86,7 +86,7 @@
     srand(seedVal);
     for (int i = 0;i < 4000;i ++) {
         int index = rand() % size;
-        long value = rand() % maxValue;
+        long value = (rand() % (maxValue * 2)) - maxValue;
         array->Set(index, value);
         arrayHolder[index] = value;
     }
@@ -99,20 +99,20 @@
 
 template <int bitNum>
 void testDifferentBitSizeHelper() {
-    long maxValue = (long) (pow(2, bitNum) - 1);
+    long maxValue = (long) (pow(2, bitNum - 1) - 1);
     int size = 100000;
-    CompactArray<bitNum, false>* array = new CompactArray<bitNum, false>(size);
+    SCompactArray<bitNum, true>* array = new SCompactArray<bitNum, true>(size);
     
     srand((int) time(NULL));
     long seedVal = rand();
     
     srand((int)seedVal);
     for (int i = 0;i < size;i ++)
-        array->Set(i, rand() % maxValue);
+        array->Set(i, (rand() % (maxValue * 2)) - maxValue);
     
     srand((int)seedVal);
     for (int i = 0;i < size;i ++)
-        assert((rand() % maxValue) == array->Get(i));
+        assert(((rand() % (maxValue * 2)) - maxValue) == array->Get(i));
 }
 
 /**
@@ -152,18 +152,18 @@ void testDifferentBitSizeHelper() {
     const int bitNum = 23;
     int maxValue = (int) (pow(2, bitNum) - 1);
     int size = 100000;
-    CompactArray<bitNum, false>* array = new CompactArray<bitNum, false>(size);
+    SCompactArray<bitNum, true>* array = new SCompactArray<bitNum, true>(size);
     for (int k = 0;k < 40;k ++) {
         srand((int) time(NULL));
         int seedVal = rand();;
         
         srand(seedVal);
         for (int i = 0;i < size;i ++)
-            array->Set(i, rand() % maxValue);
+            array->Set(i, (rand() % (maxValue * 2)) - maxValue);
         
         srand(seedVal);
         for (int i = 0;i < size;i ++)
-            XCTAssertTrue(rand() % maxValue == array->Get(i));
+            XCTAssertTrue((rand() % (maxValue * 2)) - maxValue == array->Get(i));
     }
     
     delete array;
@@ -177,13 +177,13 @@ long getTime() {
 
 template <int bitNum>
 void testSpeedComparisionHelper() {
-    long maxValue = (int) (pow(2, bitNum) - 1);
+    long maxValue = (int) (pow(2, bitNum - 1) - 1);
     long size = 1000000;
     
     double ca_put = 0, ca_get = 0;
     double na_put = 0, na_get = 0;
-    CompactArray<bitNum, false>* array = new CompactArray<bitNum, false>(size);
-    unsigned long normalArray[size];
+    SCompactArray<bitNum, true>* array = new SCompactArray<bitNum, true>(size);
+    long normalArray[size];
     for (int i = 0;i < size;i ++)
         normalArray[i] = 0;
     
@@ -195,14 +195,14 @@ void testSpeedComparisionHelper() {
         NSDate* start = [NSDate date];
         srand(seedVal);
         for (int i = 0;i < size;i ++)
-            array->Set(i, rand() % maxValue);
+            array->Set(i, (rand() % (maxValue * 2)) - maxValue);
         
         ca_put += fabs([start timeIntervalSinceNow]);
         
         start = [NSDate date];
         srand(seedVal);
         for (long i = 0;i < size;i ++)
-            normalArray[i] =rand() % maxValue;
+            normalArray[i] = (rand() % (maxValue * 2)) - maxValue;
         
         na_put += fabs([start timeIntervalSinceNow]);
         
@@ -296,8 +296,6 @@ void testSpeedComparisionHelper() {
     testSpeedComparisionHelper<55>();
     testSpeedComparisionHelper<56>();
     testSpeedComparisionHelper<57>();
-    
-    
 }
 
 @end

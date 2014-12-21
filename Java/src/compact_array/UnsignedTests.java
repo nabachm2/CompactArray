@@ -1,12 +1,14 @@
-package compact_array;
-import static org.junit.Assert.*;
+package tests;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Random;
 
 import org.junit.Test;
 
+import compact_array.UnsignedCompactArray;
 
-public class Tests {
+
+public class UnsignedTests {
 
 	/**
 	 * Tests basic get and set operations, setting increasing
@@ -17,7 +19,7 @@ public class Tests {
 		int bitNum = 7;
 		int maxValue = (int) (Math.pow(2, bitNum) - 1);
 		int size = 100000;
-		CompactArray array = new CompactArray(size, bitNum);
+		UnsignedCompactArray array = new UnsignedCompactArray(size, bitNum);
 		for (int i = 0;i < size;i ++) 
 			array.set(i, i % maxValue);
 		
@@ -37,7 +39,7 @@ public class Tests {
 		int bitNum = 7;
 		long maxValue = (int) (Math.pow(2, bitNum) - 1);
 		int size = 100000;
-		CompactArray array = new CompactArray(size, bitNum);
+		UnsignedCompactArray array = new UnsignedCompactArray(size, bitNum);
 		
 		Random rand = new Random(seedVal);
 		for (int i = 0;i < size;i ++) 
@@ -61,7 +63,7 @@ public class Tests {
 		int bitNum = 7;
 		long maxValue = (int) (Math.pow(2, bitNum) - 1);
 		int size = 100000;
-		CompactArray array = new CompactArray(size, bitNum);
+		UnsignedCompactArray array = new UnsignedCompactArray(size, bitNum);
 		long[] arrayHolder = new long[size];
 		
 		Random rand = new Random(seedVal);
@@ -88,7 +90,7 @@ public class Tests {
 		for (int bitNum = 2;bitNum < 45;bitNum ++) {
 			long maxValue = (long) (Math.pow(2, bitNum) - 1);
 			int size = 100000;
-			CompactArray array = new CompactArray(size, bitNum);
+			UnsignedCompactArray array = new UnsignedCompactArray(size, bitNum);
 			
 			Random rand = new Random(seedVal);
 			for (int i = 0;i < size;i ++) 
@@ -109,7 +111,7 @@ public class Tests {
 		int bitNum = 23;
 		long maxValue = (long) (Math.pow(2, bitNum) - 1);
 		int size = 100000;
-		CompactArray array = new CompactArray(size, bitNum);
+		UnsignedCompactArray array = new UnsignedCompactArray(size, bitNum);
 		for (int k = 0;k < 40;k ++) {
 			Random seedGenerator = new Random();
 			long seedVal = seedGenerator.nextLong();
@@ -138,7 +140,7 @@ public class Tests {
 			
 			long ca_put = 0, ca_get = 0;
 			long na_put = 0, na_get = 0;
-			CompactArray array = new CompactArray(size, bitNum);
+			UnsignedCompactArray array = new UnsignedCompactArray(size, bitNum);
 			long[] normalArray = new long[size];
 			
 			long checksum1 = 0, checksum2 = 0;
@@ -179,8 +181,10 @@ public class Tests {
 			long size_ca = size * bitNum;
 			System.out.println("STATS FOR BITSIZE:" + bitNum + " RATIOS OF COMPACT ARRAY TO NORMAL ARRAY OF LONGS");
 			System.out.println("MEMORY RATIO:" + size_ca / (double) size_na);
-			System.out.println("RATIO BETWEEN ASSIANGMENT:" + diff_put);
-			System.out.println("RATIO BETWEEN GET:" + diff_get);
+			System.out.println("RATIO BETWEEN ASSIGNMENT TIMES:" + diff_put + " (" + (ca_put / 1e9 / 40) + 
+					" to " + (na_put / 1e9 / 40) + ") secs per 1000000 iterations");
+			System.out.println("RATIO BETWEEN GET TIMES:" + diff_get + " (" + (ca_get / 1e9 / 40) + 
+					" to " + (na_get / 1e9 / 40) + ") secs per 1000000 iterations");
 			assertEquals(checksum1, checksum2);
 			System.out.println();
 		}

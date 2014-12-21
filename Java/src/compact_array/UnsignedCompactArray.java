@@ -26,7 +26,7 @@ import java.util.Iterator;
  * very fast and that statistic can be misleading.
  *
  */
-public class CompactArray implements Iterable<Long> {
+public class UnsignedCompactArray implements Iterable<Long> {
 
 	//our array of values
 	private long[] array;
@@ -57,9 +57,9 @@ public class CompactArray implements Iterable<Long> {
 	 * @param max_size the amount of elements
 	 * @param max_bits the amount of bits per element
 	 */
-	public CompactArray(long max_size, int max_bits) {
-		assert(max_bits < Long.SIZE);
+	public UnsignedCompactArray(long max_size, int max_bits) {
 		bitCount = max_bits;
+		assert(bitCount < Long.SIZE);
 		for (int i = 0;i < bitCount;i ++)
 			bitMask |= 1L << i;
 		
@@ -129,7 +129,7 @@ public class CompactArray implements Iterable<Long> {
 		} else {
 			long retVal = 0;
 			retVal |= (array[adj_index] >>> mod_index) << left_over;
-			retVal |= (array[adj_index + 1] << (Long.SIZE - left_over)) >>> (Long.SIZE - left_over);
+			retVal |= array[adj_index + 1] & ((1L << left_over) - 1L);
 			return retVal;
 		}
 	}

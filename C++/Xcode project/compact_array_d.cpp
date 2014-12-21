@@ -1,34 +1,36 @@
 //
-//  CompactArray.cpp
+//  compact_array_d.cpp
 //  CompactArray
 //
-//  Created by Nicholas Bachmann on 1/29/14.
-//  Copyright (c) 2014 Nicholas Bachmann. All rights reserved.
+//  Created by Nicholas Bachmann on 12/20/14.
+//  Copyright (c) 2014 banana.inc. All rights reserved.
 //
 
-#include "CompactArray.h"
 
-template <int bitCount, bool isSigned>
-CompactArray<bitCount, isSigned>::CompactArray(size_t max_size) {
+#include "compact_array_d.h"
+
+DCompactArray::DCompactArray(size_t max_size, int bit_count, bool is_signed) {
+    is_signed_ = is_signed;
+    bit_count_ = bit_count;
+    
     bit_mask_ = 0;
-    for (int i = 0;i < bitCount + GetBit();i ++)
+    for (int i = 0;i < bit_count_ + GetSignBit();i ++)
         bit_mask_ |= 1L << i;
     
-    sign_mask_ = 1L << (bitCount + GetBit() - 1);
+    sign_mask_ = 1L << (bit_count_ + GetSignBit() - 1);
     negative_mask_ = ~0 & ~bit_mask_;
     
     max_size_ = max_size;
-    int array_size = (int) (max_size * (bitCount + GetBit()) / (sizeof(*array_) * 8) + 1);
-    array_ = new unsigned long[array_size];
+    int array_size = (int) (max_size * (bit_count_ + GetSignBit()) / (sizeof(unsigned long) * 8) + 1);
+    array_.resize(array_size);
     for (int i = 0;i < array_size;i ++)
         array_[i] = 0;
 }
 
-template <int bitCount, bool isSigned>
-void CompactArray<bitCount, isSigned>::Set(int index, long element) {
-    int adj_index = (int) ((index * (bitCount + GetBit())) / (int) (sizeof(*array_) * 8)); //get array position
-    int mod_index = (index * (bitCount + GetBit())) % (sizeof(*array_) * 8); //get bit offset
-    int left_over = mod_index + (bitCount + GetBit()) - (sizeof(*array_) * 8); //overflow into next array spot
+void DCompactArray::Set(int index, long element) {
+    int adj_index = (int) ((index * (bit_count_ + GetSignBit())) / (int) (sizeof(unsigned long) * 8)); //get array position
+    int mod_index = (index * (bit_count_ + GetSignBit())) % (sizeof(unsigned long) * 8); //get bit offset
+    int left_over = mod_index + (bit_count_ + GetSignBit()) - (sizeof(unsigned long) * 8); //overflow into next array spot
     if (left_over <= 0) { //no overflow, just set within the one array spot
         array_[adj_index] &= ~((bit_mask_) << mod_index); //clear spot
         array_[adj_index] |= (element & bit_mask_) << mod_index; //set value
@@ -48,23 +50,26 @@ void CompactArray<bitCount, isSigned>::Set(int index, long element) {
         array_[adj_index] |= (((unsigned long) (element & bit_mask_)) >> left_over) << mod_index;
         
         //extract lower half of element which is currently shifted completly left
-        long left_over_val = (element & bit_mask_) << ((sizeof(*array_) * 8) - left_over);
+        long left_over_val = (element & bit_mask_) << ((sizeof(unsigned long) * 8) - left_over);
         //clear our spot
-        array_[adj_index + 1] &= ~(bit_mask_ >> ((bitCount + GetBit()) - left_over));
+        array_[adj_index + 1] &= ~(bit_mask_ >> ((bit_count_ + GetSignBit()) - left_over));
         //shift it left to store
-        array_[adj_index + 1] |= ((unsigned long) left_over_val) >> ((sizeof(*array_) * 8) - left_over);
+        array_[adj_index + 1] |= ((unsigned long) left_over_val) >> ((sizeof(unsigned long) * 8) - left_over);
     }
 }
 
-template <int bitCount, bool isSigned>
-long CompactArray<bitCount, isSigned>::Get(int index) const {
+const long DCompactArray::operator[](int index) const {
+    return Get(index);
+}
+
+long DCompactArray::Get(int index) const {
     //see set(...) for implementation details of how the storing of
     //of values works, this is just the opposite.
-    int adj_index = (index * (bitCount + GetBit())) / (int) (sizeof(*array_) * 8);
-    int mod_index = (index * (bitCount + GetBit())) % (sizeof(*array_) * 8);
-    int left_over = mod_index + (bitCount + GetBit()) - (sizeof(*array_) * 8);
+    int adj_index = (index * (bit_count_ + GetSignBit())) / (int) (sizeof(unsigned long) * 8);
+    int mod_index = (index * (bit_count_ + GetSignBit())) % (sizeof(unsigned long) * 8);
+    int left_over = mod_index + (bit_count_ + GetSignBit()) - (sizeof(unsigned long) * 8);
     if (left_over <= 0) {
-        if (isSigned) {
+        if (is_signed_) {
             long retVal = (array_[adj_index] >> mod_index) & bit_mask_;
             if ((retVal & sign_mask_) != 0) return retVal | negative_mask_;
             else return retVal;
@@ -75,7 +80,7 @@ long CompactArray<bitCount, isSigned>::Get(int index) const {
         unsigned long retVal = 0;
         retVal |= (array_[adj_index] >> mod_index) << left_over;
         retVal |= array_[adj_index + 1] & ((1L << left_over) - 1L);
-        if(isSigned) {
+        if(is_signed_) {
             if ((retVal & sign_mask_) != 0) return retVal | negative_mask_;
         }
         

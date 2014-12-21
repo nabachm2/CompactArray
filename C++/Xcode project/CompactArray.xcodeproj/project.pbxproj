@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E1996ABF192ADC3500CDFEEE /* CompactArray.hpp in Sources */ = {isa = PBXBuildFile; fileRef = E1996ABD192ADC3500CDFEEE /* CompactArray.hpp */; };
-		E1996AC0192ADC3500CDFEEE /* CompactArray.h in Headers */ = {isa = PBXBuildFile; fileRef = E1996ABE192ADC3500CDFEEE /* CompactArray.h */; };
+		E108A7C11A4637F7004FB54A /* compact_array_d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E108A7BF1A4637F7004FB54A /* compact_array_d.cpp */; };
+		E108A7C21A4637F7004FB54A /* compact_array_d.h in Headers */ = {isa = PBXBuildFile; fileRef = E108A7C01A4637F7004FB54A /* compact_array_d.h */; };
+		E108A7C41A4639D2004FB54A /* DCompactArray_Tests.mm in Sources */ = {isa = PBXBuildFile; fileRef = E108A7C31A4639D2004FB54A /* DCompactArray_Tests.mm */; };
+		E108A7C61A4639F0004FB54A /* DCompactArraySigned_Tests.mm in Sources */ = {isa = PBXBuildFile; fileRef = E108A7C51A4639F0004FB54A /* DCompactArraySigned_Tests.mm */; };
+		E108A7C71A463C7C004FB54A /* libCompactArray.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1996AB6192ADC1300CDFEEE /* libCompactArray.dylib */; };
+		E108A7C81A463C97004FB54A /* libCompactArray.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1996AB6192ADC1300CDFEEE /* libCompactArray.dylib */; };
+		E1996ABF192ADC3500CDFEEE /* compact_array_s.hpp in Sources */ = {isa = PBXBuildFile; fileRef = E1996ABD192ADC3500CDFEEE /* compact_array_s.hpp */; };
+		E1996AC0192ADC3500CDFEEE /* compact_array_s.h in Headers */ = {isa = PBXBuildFile; fileRef = E1996ABE192ADC3500CDFEEE /* compact_array_s.h */; };
 		E1996AC8192ADCD200CDFEEE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1996AC7192ADCD200CDFEEE /* XCTest.framework */; };
 		E1996ACE192ADCD200CDFEEE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1996ACC192ADCD200CDFEEE /* InfoPlist.strings */; };
-		E1996AD0192ADCD200CDFEEE /* CompactArray_Tests.mm in Sources */ = {isa = PBXBuildFile; fileRef = E1996ACF192ADCD200CDFEEE /* CompactArray_Tests.mm */; };
+		E1996AD0192ADCD200CDFEEE /* SCompactArray_Tests.mm in Sources */ = {isa = PBXBuildFile; fileRef = E1996ACF192ADCD200CDFEEE /* SCompactArray_Tests.mm */; };
 		E1996ADE192AEC6E00CDFEEE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1996AC7192ADCD200CDFEEE /* XCTest.framework */; };
 		E1996AE4192AEC6E00CDFEEE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1996AE2192AEC6E00CDFEEE /* InfoPlist.strings */; };
-		E1996AE6192AEC6E00CDFEEE /* CompactArraySigned_Tests.mm in Sources */ = {isa = PBXBuildFile; fileRef = E1996AE5192AEC6E00CDFEEE /* CompactArraySigned_Tests.mm */; };
+		E1996AE6192AEC6E00CDFEEE /* SCompactArraySigned_Tests.mm in Sources */ = {isa = PBXBuildFile; fileRef = E1996AE5192AEC6E00CDFEEE /* SCompactArraySigned_Tests.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,19 +41,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E108A7BF1A4637F7004FB54A /* compact_array_d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = compact_array_d.cpp; sourceTree = "<group>"; };
+		E108A7C01A4637F7004FB54A /* compact_array_d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compact_array_d.h; sourceTree = "<group>"; };
+		E108A7C31A4639D2004FB54A /* DCompactArray_Tests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DCompactArray_Tests.mm; sourceTree = "<group>"; };
+		E108A7C51A4639F0004FB54A /* DCompactArraySigned_Tests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DCompactArraySigned_Tests.mm; sourceTree = "<group>"; };
 		E1996AB6192ADC1300CDFEEE /* libCompactArray.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libCompactArray.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1996ABD192ADC3500CDFEEE /* CompactArray.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CompactArray.hpp; sourceTree = "<group>"; };
-		E1996ABE192ADC3500CDFEEE /* CompactArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompactArray.h; sourceTree = "<group>"; };
+		E1996ABD192ADC3500CDFEEE /* compact_array_s.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = compact_array_s.hpp; sourceTree = "<group>"; };
+		E1996ABE192ADC3500CDFEEE /* compact_array_s.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compact_array_s.h; sourceTree = "<group>"; };
 		E1996AC5192ADCD200CDFEEE /* CompactArray Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CompactArray Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1996AC7192ADCD200CDFEEE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E1996ACB192ADCD200CDFEEE /* CompactArray Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CompactArray Tests-Info.plist"; sourceTree = "<group>"; };
 		E1996ACD192ADCD200CDFEEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E1996ACF192ADCD200CDFEEE /* CompactArray_Tests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CompactArray_Tests.mm; sourceTree = "<group>"; };
+		E1996ACF192ADCD200CDFEEE /* SCompactArray_Tests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SCompactArray_Tests.mm; sourceTree = "<group>"; };
 		E1996AD1192ADCD200CDFEEE /* CompactArray Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CompactArray Tests-Prefix.pch"; sourceTree = "<group>"; };
 		E1996ADD192AEC6E00CDFEEE /* CompactArraySigned Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CompactArraySigned Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1996AE1192AEC6E00CDFEEE /* CompactArraySigned Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CompactArraySigned Tests-Info.plist"; sourceTree = "<group>"; };
 		E1996AE3192AEC6E00CDFEEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E1996AE5192AEC6E00CDFEEE /* CompactArraySigned_Tests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CompactArraySigned_Tests.mm; sourceTree = "<group>"; };
+		E1996AE5192AEC6E00CDFEEE /* SCompactArraySigned_Tests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SCompactArraySigned_Tests.mm; sourceTree = "<group>"; };
 		E1996AE7192AEC6E00CDFEEE /* CompactArraySigned Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CompactArraySigned Tests-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E108A7C71A463C7C004FB54A /* libCompactArray.dylib in Frameworks */,
 				E1996AC8192ADCD200CDFEEE /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E108A7C81A463C97004FB54A /* libCompactArray.dylib in Frameworks */,
 				E1996ADE192AEC6E00CDFEEE /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,8 +93,10 @@
 		E1996AAD192ADC1300CDFEEE = {
 			isa = PBXGroup;
 			children = (
-				E1996ABD192ADC3500CDFEEE /* CompactArray.hpp */,
-				E1996ABE192ADC3500CDFEEE /* CompactArray.h */,
+				E108A7BF1A4637F7004FB54A /* compact_array_d.cpp */,
+				E108A7C01A4637F7004FB54A /* compact_array_d.h */,
+				E1996ABD192ADC3500CDFEEE /* compact_array_s.hpp */,
+				E1996ABE192ADC3500CDFEEE /* compact_array_s.h */,
 				E1996AC9192ADCD200CDFEEE /* CompactArray Tests */,
 				E1996ADF192AEC6E00CDFEEE /* CompactArraySigned Tests */,
 				E1996AC6192ADCD200CDFEEE /* Frameworks */,
@@ -111,7 +125,8 @@
 		E1996AC9192ADCD200CDFEEE /* CompactArray Tests */ = {
 			isa = PBXGroup;
 			children = (
-				E1996ACF192ADCD200CDFEEE /* CompactArray_Tests.mm */,
+				E108A7C31A4639D2004FB54A /* DCompactArray_Tests.mm */,
+				E1996ACF192ADCD200CDFEEE /* SCompactArray_Tests.mm */,
 				E1996ACA192ADCD200CDFEEE /* Supporting Files */,
 			);
 			path = "CompactArray Tests";
@@ -130,7 +145,8 @@
 		E1996ADF192AEC6E00CDFEEE /* CompactArraySigned Tests */ = {
 			isa = PBXGroup;
 			children = (
-				E1996AE5192AEC6E00CDFEEE /* CompactArraySigned_Tests.mm */,
+				E108A7C51A4639F0004FB54A /* DCompactArraySigned_Tests.mm */,
+				E1996AE5192AEC6E00CDFEEE /* SCompactArraySigned_Tests.mm */,
 				E1996AE0192AEC6E00CDFEEE /* Supporting Files */,
 			);
 			path = "CompactArraySigned Tests";
@@ -153,7 +169,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1996AC0192ADC3500CDFEEE /* CompactArray.h in Headers */,
+				E1996AC0192ADC3500CDFEEE /* compact_array_s.h in Headers */,
+				E108A7C21A4637F7004FB54A /* compact_array_d.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +236,7 @@
 		E1996AAE192ADC1300CDFEEE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = banana.inc;
 				TargetAttributes = {
 					E1996AC4192ADCD200CDFEEE = {
@@ -273,7 +290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1996ABF192ADC3500CDFEEE /* CompactArray.hpp in Sources */,
+				E108A7C11A4637F7004FB54A /* compact_array_d.cpp in Sources */,
+				E1996ABF192ADC3500CDFEEE /* compact_array_s.hpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +299,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1996AD0192ADCD200CDFEEE /* CompactArray_Tests.mm in Sources */,
+				E108A7C41A4639D2004FB54A /* DCompactArray_Tests.mm in Sources */,
+				E1996AD0192ADCD200CDFEEE /* SCompactArray_Tests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +308,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1996AE6192AEC6E00CDFEEE /* CompactArraySigned_Tests.mm in Sources */,
+				E108A7C61A4639F0004FB54A /* DCompactArraySigned_Tests.mm in Sources */,
+				E1996AE6192AEC6E00CDFEEE /* SCompactArraySigned_Tests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +368,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -401,6 +421,7 @@
 		E1996ABB192ADC1300CDFEEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -410,6 +431,7 @@
 		E1996ABC192ADC1300CDFEEE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -419,6 +441,7 @@
 		E1996AD5192ADCD200CDFEEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -440,6 +463,7 @@
 		E1996AD6192ADCD200CDFEEE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -457,6 +481,7 @@
 		E1996AEB192AEC6E00CDFEEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -477,6 +502,7 @@
 		E1996AEC192AEC6E00CDFEEE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -509,6 +535,7 @@
 				E1996ABC192ADC1300CDFEEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1996AD4192ADCD200CDFEEE /* Build configuration list for PBXNativeTarget "CompactArray Tests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +544,7 @@
 				E1996AD6192ADCD200CDFEEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1996AEA192AEC6E00CDFEEE /* Build configuration list for PBXNativeTarget "CompactArraySigned Tests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +553,7 @@
 				E1996AEC192AEC6E00CDFEEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

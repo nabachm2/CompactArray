@@ -1,10 +1,11 @@
 //
-//  CompactArray.h
+//  compact_array_d.h
 //  CompactArray
 //
-//  Created by Nicholas Bachmann on 1/29/14.
-//  Copyright (c) 2014 Nicholas Bachmann. All rights reserved.
+//  Created by Nicholas Bachmann on 12/20/14.
+//  Copyright (c) 2014 banana.inc. All rights reserved.
 //
+
 /**
  * @author Nicholas
  *
@@ -13,6 +14,9 @@
  * the max amount of bits that a number will have. For example if you only need
  * to store 20 bit numbers, an array of ints would be a bit wasteful. By using this
  * array you could achieve the optimal space usage, without sacrificing too much
+ *
+ * This version is dynamic, meaning that you can pass in the bit count and specify if numbers
+ * should be signed at runtime
  *
  * For this implementation I have allowed the user to specify size at compile time
  * as well as allowing the user to use signed numbers. This allows very quick speeds
@@ -30,38 +34,44 @@
  * very fast and that statistic can be misleading.
  */
 
-#ifndef __CompactArray__CompactArray__
-#define __CompactArray__CompactArray__
+#ifndef __CompactArray__compact_array_d__
+#define __CompactArray__compact_array_d__
+
+#include <stdio.h>
 
 #include <cstddef>
+#include <vector>
 
-template <int bitCount, bool isSigned>
-class CompactArray {
+class DCompactArray {
+    
+    int bit_count_;
+    bool is_signed_;
     
     //array of values
-	unsigned long* array_;
+    std::vector<unsigned long> array_;
     
-	//the size in elements
+    //the size in elements
     size_t max_size_;
     
-	//a bit mask of bitCount 1's
+    //a bit mask of bitCount 1's
     unsigned long bit_mask_;
     unsigned long sign_mask_;
     unsigned long negative_mask_;
     
 private:
-    inline int GetBit() const { return isSigned ? 1 : 0; }
+    inline int GetSignBit() const { return is_signed_ ? 1 : 0; }
     
 public:
-    CompactArray(size_t max_size);
+    DCompactArray(size_t max_size, int bit_count, bool is_signed=true);
     
     void Set(int index, long element);
     long Get(int index) const;
+    
+    const long operator[](const int index) const;
     
     inline size_t GetSize() { return max_size_; }
     
 };
 
-#include "CompactArray.hpp"
 
-#endif /* defined(__CompactArray__CompactArray__) */
+#endif /* defined(__CompactArray__compact_array_d__) */
